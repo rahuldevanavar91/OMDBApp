@@ -37,14 +37,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     private EditText mSearchEditText;
-    private Request mRequest;
-    private ArrayList<SearchItem> mSearchList;
     private RecyclerView mSearchRecyclerView;
     private TextView mMessageTextView;
     private ProgressBar mProgressBar;
 
     private SearchAdapter mSearchAdapter;
     private int mPageNumber = 1;
+    private Request mRequest;
+    private ArrayList<SearchItem> mSearchList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
