@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">OMDB</string>
+    <string name="loading_more_results">Loading more results</string>
+    <string name="movie_id">movie_id</string>
+    <string name="title">title</string>
+</resources>
