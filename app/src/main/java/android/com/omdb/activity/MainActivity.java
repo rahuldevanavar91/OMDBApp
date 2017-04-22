@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mProgressBar.setVisibility(View.VISIBLE);
         }
         HashMap<String, String> hashMap = new HashMap<>();
-        hashMap.put("s", mSearchEditText.getText().toString());
+        hashMap.put("s", mSearchEditText.getText().toString().trim());
         hashMap.put("page", String.valueOf(mPageNumber));
         mRequest.getRequest(getBaseContext(), Request.OMDB_URL, hashMap, this);
     }
