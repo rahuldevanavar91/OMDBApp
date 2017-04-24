@@ -27,15 +27,16 @@ public class Request {
                 }
                 builder.append(key).append("=").append(value);
             }
-            url += "?" + builder.toString();
-            CustomRequest getRequest = new CustomRequest(com.android.volley.Request.Method.GET, url, param, listener, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    listener.onError(error);
-                }
-            });
-            VolleySingleton.getInstance(context.getApplicationContext()).addToRequestQueue(getRequest);
         }
+        url += "?" + builder.toString();
+        CustomRequest getRequest = new CustomRequest(com.android.volley.Request.Method.GET, url, param, listener, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                listener.onError(error);
+            }
+        });
+        VolleySingleton.getInstance(context.getApplicationContext()).addToRequestQueue(getRequest);
+
 
     }
 }

@@ -1,7 +1,7 @@
 package android.com.omdb.adapter;
 
 import android.com.omdb.R;
-import android.com.omdb.activity.MainActivity;
+import android.com.omdb.activity.SearchResultActivity;
 import android.com.omdb.model.SearchItem;
 import android.com.omdb.network.VolleySingleton;
 import android.com.omdb.util.OnItemClickListener;
@@ -71,8 +71,8 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
                     holder.moviePoster.setImageResource(R.color.smokey_white);
                 }
             });
-            holder.movieName.setText("Title : " + item.getTitle());
-            holder.movieYear.setText("Year : " + item.getYear());
+            holder.movieName.setText(item.getTitle());
+            holder.movieYear.setText("Relase Year : " + item.getYear());
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -81,7 +81,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
             });
         } else {
             if (mLastMoreRequestPos != position) {
-                ((MainActivity) mContext).requestForMoreItems();
+                ((SearchResultActivity) mContext).requestForMoreItems();
                 mLastMoreRequestPos = position;
             }
         }

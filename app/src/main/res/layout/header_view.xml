@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.com.omdb.helper.HeaderView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+
+    <android.com.omdb.helper.OmdbTextView
+        android:id="@+id/movie_title"
+        style="@style/titleBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_20dp"
+        android:layout_marginTop="@dimen/_10dp"
+        android:textColor="@color/white" />
+
+    <android.com.omdb.helper.OmdbTextView
+        android:id="@+id/year"
+        style="@style/subHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/movie_title"
+        android:layout_marginBottom="@dimen/_10dp"
+        android:layout_marginLeft="@dimen/_20dp"
+        android:layout_marginTop="@dimen/_4dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12dp" />
+
+
+</android.com.omdb.helper.HeaderView>

@@ -1,56 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_20dp"
+        android:background="@drawable/omdb_logo" />
+
+    <EditText
+        android:id="@+id/query_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_40dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:hint="Search for your favorite movie... "
+        android:paddingBottom="@dimen/_15dp"
+        android:paddingTop="@dimen/_15dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
 
     <LinearLayout
-        android:id="@+id/search_layout"
-        android:layout_width="match_parent"
+        android:id="@+id/search_button"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_10dp"
-        android:orientation="horizontal">
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_20dp"
+        android:background="@drawable/white_rounded_rectangle"
+        android:gravity="center"
+        android:paddingBottom="@dimen/_10dp"
+        android:paddingLeft="@dimen/_20dp"
+        android:paddingRight="@dimen/_40dp"
+        android:paddingTop="@dimen/_10dp">
 
-        <EditText
-            android:id="@+id/query_edit_text"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight="1"
-            android:hint="Enter movie name"
-            android:textSize="14dp" />
-
-        <Button
-            android:id="@+id/search_button"
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Search" />
+            android:background="@drawable/search_icon" />
 
+        <android.com.omdb.helper.OmdbTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_30dp"
+            android:text="SEARCH"
+            android:textColor="@color/white" />
     </LinearLayout>
 
-
-    <TextView
-        android:id="@+id/message"
+    <android.com.omdb.helper.OmdbTextView
+        style="@style/titleBold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/search_layout"
-        android:layout_gravity="left"
+        android:layout_gravity="center"
         android:layout_marginLeft="@dimen/_10dp"
-        android:layout_marginTop="@dimen/_10dp" />
+        android:layout_marginRight="@dimen/_10dp"
+        android:layout_marginTop="@dimen/_40dp"
+        android:gravity="center"
+        android:text="THE LARGEST ONLINE MOVIE DATABASE"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20dp" />
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/search_list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/message"
-        android:layout_marginTop="10dp"
-        android:visibility="gone" />
-
-    <ProgressBar
-        android:id="@+id/progress_bar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:visibility="gone" />
-</RelativeLayout>
+</LinearLayout>
